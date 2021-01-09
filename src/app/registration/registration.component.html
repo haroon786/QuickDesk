@@ -1,0 +1,37 @@
+<div class="login-container">
+  <div class="login-content">
+    <mat-toolbar class="login-toolbar" color="primary">
+    <fa-icon [icon]="ticket" rotate="125" size="2x"></fa-icon>
+    <span style="margin-left: 20px;">Create an Account  </span>
+  </mat-toolbar>
+    <mat-card>
+      <form [formGroup]="loginForm" novalidate (ngSubmit)="onSubmit()">
+        <mat-form-field>
+          <mat-icon matPrefix>person_outline</mat-icon>
+          <input autofocus type="text" matInput placeholder="Username" formControlName="username">
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-icon matPrefix>lock_outline</mat-icon>
+          <input type="password" autocomplete="false" matInput placeholder="Password" formControlName="password">
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-icon matPrefix>lock_outline</mat-icon>
+          <input type="password" autocomplete="false" matInput placeholder="Confirm Password" formControlName="password">
+        </mat-form-field>
+
+        <ngx-recaptcha2 #captchaElem siteKey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
+         (success)="handleSuccess($event)" [size]="size"
+        [hl]="lang" [theme]="theme" [type]="type"
+        formControlName="recaptcha">
+        </ngx-recaptcha2>
+        <button type="submit" mat-raised-button color="primary">Sign Up</button>
+
+
+
+      </form>
+    </mat-card>
+
+
+</div>

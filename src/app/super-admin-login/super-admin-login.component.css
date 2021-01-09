@@ -1,0 +1,54 @@
+.login-container {
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  display: flex;
+}
+
+form {
+  width: 100%;
+}
+
+.login-content {
+  width: 400px;
+  display: block;
+  margin: 0 auto;
+}
+
+.login-toolbar {
+  justify-content: center;
+}
+
+.mat-form-field {
+  width: 100%;
+  display: block;
+}
+
+.mat-raised-button {
+
+  margin-top: 10px;
+}
+.textForgotpassword
+{
+  margin-left: 60px;
+
+}
+/* .line{
+  width: 90%;
+
+  border-bottom: 1px solid black;
+  position: absolute;
+  MARGIN-TOP: 10PX;
+
+  } */
+.site
+{
+text-align: center;
+margin-top: 50px;
+}
+.footer
+{
+  display: flex;
+  justify-content: space-around;
+
+}
