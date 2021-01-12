@@ -6,12 +6,16 @@ import { SuperAdminNavigationComponent } from './super-admin-navigation/super-ad
 
 
 const routes: Routes = [
- // {path:'',component:SuperAdminLoginComponent},
+  {path:'',component:SuperAdminLoginComponent},
   {path:'registration',component:RegistrationComponent},
-  {path:'',component:SuperAdminNavigationComponent},
-
-  { path: 'userdashboard', loadChildren: () => import('./users/users.module').then(m => m.UsersModule) }
-];
+  {path:'quickdesk',component:SuperAdminNavigationComponent,
+    children:[
+    {
+       path: 'userdashboard', loadChildren: () => import('./users/users.module').then(m => m.UsersModule)
+    }
+  ]
+  }
+]
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

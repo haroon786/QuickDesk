@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
-import { faTicketAlt } from '@fortawesome/free-solid-svg-icons';
+import { faTicketAlt  } from '@fortawesome/free-solid-svg-icons';
+import  {Router} from '@angular/router';
 
 @Component({
   selector: 'app-super-admin-login',
@@ -20,7 +21,7 @@ export class SuperAdminLoginComponent implements OnInit {
   public lang = 'en';
   public type: 'image' | 'audio';
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder,private route:Router) {}
 
   loginForm = this.fb.group({
     username: [null],
@@ -34,9 +35,10 @@ export class SuperAdminLoginComponent implements OnInit {
   onSubmit() {
 
 
-    if (this.loginForm.valid) {
+    // if (this.loginForm.valid) {
 
-    }
+    // }
+    this.route.navigateByUrl('quickdesk/userdashboard')
   }
   handleSuccess(data) {
     console.log(data);

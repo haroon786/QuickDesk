@@ -1,0 +1,18 @@
+p {
+  font-family: Lato;
+}
+
+.container
+{
+  display: flex;
+  flex-wrap:wrap;
+}
+.example-card {
+  width: 150px;
+  margin: 4px;
+}
+.count
+{
+  font-weight: bold;
+  font-size: 20px;
+}

@@ -17,8 +17,7 @@ import {MatInputModule} from '@angular/material/input';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgxCaptchaModule } from 'ngx-captcha';
 import { RegistrationComponent } from './registration/registration.component';
-
-
+import {MatExpansionModule} from '@angular/material/expansion'
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,6 +39,7 @@ import { RegistrationComponent } from './registration/registration.component';
     MatInputModule,
     ReactiveFormsModule,
     FontAwesomeModule,
+    MatExpansionModule,
     NgxCaptchaModule
   ],
   providers: [],

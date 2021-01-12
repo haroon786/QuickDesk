@@ -3,12 +3,31 @@
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
       [opened]="(isHandset$ | async) === false">
-    <mat-toolbar>Menu</mat-toolbar>
-    <mat-nav-list>
-      <a mat-list-item href="#">Link 1</a>
-      <a mat-list-item href="#">Link 2</a>
-      <a mat-list-item href="#">Link 3</a>
-    </mat-nav-list>
+    <mat-toolbar>
+      <fa-icon [icon]="ticket" rotate="125" size="2x"></fa-icon>
+    </mat-toolbar>
+
+    <mat-accordion class="app-nav-accordion">
+      <mat-nav-list>
+        <a mat-list-item routerLink="/registration">
+          <fa-icon [icon]="edit" rotate="125" size="lg"></fa-icon>Home</a>
+
+      </mat-nav-list>
+      <mat-expansion-panel class="mat-elevation-z0">
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+              <a>
+                <fa-icon [icon]="edit" rotate="125" size="2x"></fa-icon>
+                <span style="font-size: 14px;">Ticket's</span>
+            </a>
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-nav-list>
+            <a mat-list-item style="font-size: 12px;">Create Ticket</a>
+            <a mat-list-item style="font-size: 12px;">All Tickets</a>
+        </mat-nav-list>
+    </mat-expansion-panel>
+    </mat-accordion>
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar color="primary">
@@ -23,5 +42,7 @@
       <span>QuickDesk</span>
     </mat-toolbar>
     <!-- Add Content Here -->
+    <router-outlet></router-outlet>
+
   </mat-sidenav-content>
 </mat-sidenav-container>
